@@ -1,0 +1,512 @@
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelGo!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            width: 100%;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            padding: 20px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .logo span {
+            color: #FF6B35;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: #333;
+            position: relative;
+        }
+
+        .notification-dot {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            width: 8px;
+            height: 8px;
+            background-color: #FF6B35;
+            border-radius: 50%;
+        }
+
+        /* Search Bar */
+        .search-container {
+            padding: 16px 20px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #f5f5f5;
+            border-radius: 25px;
+            padding: 12px 16px;
+            gap: 10px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: none;
+            outline: none;
+            flex: 1;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .search-bar input::placeholder {
+            color: #999;
+        }
+
+        .search-icon {
+            color: #999;
+            font-size: 18px;
+        }
+
+        /* Banner Section */
+        .banner {
+            margin: 0 20px;
+            background: linear-gradient(135deg, #FF6B35, #FF8C42);
+            border-radius: 16px;
+            padding: 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-tag {
+            background-color: rgba(255, 255, 255, 0.3);
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .banner h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 4px 0;
+        }
+
+        .banner p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .banner-btn {
+            background-color: white;
+            color: #FF6B35;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 13px;
+            margin-top: 12px;
+            cursor: pointer;
+        }
+
+        .banner-decoration {
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            font-size: 80px;
+            opacity: 0.2;
+        }
+
+        /* Categories */
+        .categories {
+            padding: 20px;
+        }
+
+        .categories-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+
+        .category-list {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .category-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            min-width: 70px;
+            cursor: pointer;
+        }
+
+        .category-icon {
+            width: 56px;
+            height: 56px;
+            background-color: #f5f5f5;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .category-item.aktif .category-icon {
+            background-color: #FF6B35;
+            color: white;
+        }
+
+        .category-name {
+            font-size: 12px;
+            color: #666;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .category-item.aktif .category-name {
+            color: #FF6B35;
+            font-weight: 600;
+        }
+
+        /* Top Restaurant Section */
+        .top-restaurant-section {
+            padding: 0 20px 20px 20px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .section-header h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .section-header .badge {
+            background-color: #FF6B35;
+            color: white;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 12px;
+            color: #999;
+            font-weight: 400;
+        }
+
+        .lihat-semua {
+            font-size: 13px;
+            color: #FF6B35;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* Restaurant Card */
+        .restaurant-card {
+            display: flex;
+            gap: 14px;
+            background-color: #fafafa;
+            border-radius: 16px;
+            padding: 14px;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .restaurant-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            transform: translateY(-1px);
+        }
+
+        .restaurant-image {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #e0e0e0, #d0d0d0);
+            border-radius: 12px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: #aaa;
+        }
+
+        .restaurant-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .restaurant-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .restaurant-location {
+            font-size: 12px;
+            color: #888;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 4px;
+        }
+
+        .restaurant-rating {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .stars {
+            color: #FFB800;
+            font-size: 14px;
+        }
+
+        .rating-number {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .rating-count {
+            font-size: 11px;
+            color: #999;
+        }
+
+        .bookmark-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 22px;
+            color: #FF6B35;
+            padding: 4px;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 14px 20px;
+            border-top: 1px solid #f0f0f0;
+            background-color: white;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            color: #999;
+            font-size: 20px;
+            transition: color 0.2s ease;
+            background: none;
+            border: none;
+        }
+
+        .nav-item span {
+            font-size: 10px;
+            font-weight: 500;
+        }
+
+        .nav-item.aktif {
+            color: #FF6B35;
+        }
+
+        .nav-item.aktif span {
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 420px) {
+            .container {
+                border-radius: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">Travel<span>Go!</span></div>
+            <div class="header-icons">
+                <button class="icon-btn" aria-label="Notifikasi">
+                    🔔
+                    <span class="notification-dot"></span>
+                </button>
+                <button class="icon-btn" aria-label="Pesan">💬</button>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Cari restoran, kopi, dll...">
+            </div>
+        </div>
+
+        <!-- Banner -->
+        <div class="banner">
+            <span class="banner-tag">🔥 Penawaran Spesial</span>
+            <h2>Diskon 30%</h2>
+            <p>untuk pesanan pertama kamu</p>
+            <button class="banner-btn">Pesan Sekarang</button>
+            <div class="banner-decoration">🍔</div>
+        </div>
+
+        <!-- Kategori -->
+        <div class="categories">
+            <div class="categories-title">Kategori</div>
+            <div class="category-list">
+                <div class="category-item aktif">
+                    <div class="category-icon">☕</div>
+                    <span class="category-name">Kopi</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">🍕</div>
+                    <span class="category-name">Pizza</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">🍣</div>
+                    <span class="category-name">Sushi</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">🍩</div>
+                    <span class="category-name">Donat</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">🥗</div>
+                    <span class="category-name">Salad</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">🍜</div>
+                    <span class="category-name">Mi</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top 3 Restoran Minggu Ini -->
+        <div class="top-restaurant-section">
+            <div class="section-header">
+                <div>
+                    <h3>
+                        3 RESTORAN TERBAIK MINGGU INI 
+                        <span class="badge">🔥 HOT</span>
+                    </h3>
+                    <p class="subtitle">Kopi & minuman</p>
+                </div>
+                <a class="lihat-semua">Lihat Semua →</a>
+            </div>
+
+            <!-- Kartu Restoran -->
+            <div class="restaurant-card">
+                <div class="restaurant-image">🏪</div>
+                <div class="restaurant-info">
+                    <div class="restaurant-name">JAKARTA'S RESTAURANT</div>
+                    <div class="restaurant-location">
+                        📍 Jakarta Selatan
+                    </div>
+                    <div class="restaurant-rating">
+                        <span class="stars">⭐</span>
+                        <span class="rating-number">4,7</span>
+                        <span class="rating-count">(500+ ulasan)</span>
+                    </div>
+                </div>
+                <button class="bookmark-btn" aria-label="Simpan">🔖</button>
+            </div>
+        </div>
+
+        <!-- Navigasi Bawah -->
+        <div class="bottom-nav">
+            <button class="nav-item aktif">
+                🏠
+                <span>Beranda</span>
+            </button>
+            <button class="nav-item">
+                🔍
+                <span>Jelajahi</span>
+            </button>
+            <button class="nav-item">
+                📋
+                <span>Pesanan</span>
+            </button>
+            <button class="nav-item">
+                ❤️
+                <span>Tersimpan</span>
+            </button>
+            <button class="nav-item">
+                👤
+                <span>Profil</span>
+            </button>
+        </div>
+
+    </div>
+
+</body>
+</html>
