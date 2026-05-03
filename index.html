@@ -3,44 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TravelGo! - Login & Sign Up</title>
+  <title>TravelGo! - Homepage</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
 </head>
 <body>
-  <div class="container">
-    <img src="assets/img/logo.png" alt="TravelGo Logo" width="80">
-    <h1>TravelGo!</h1>
-    <p class="tagline">welcome traveler</p>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <img src="assets/img/logo.png" alt="TravelGo Logo" class="logo">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="login.html">Log in</a></li>
+      <li><a href="signup.html">Sign up</a></li>
+      <li><a href="#">Help</a></li>
+    </ul>
+  </nav>
 
-    <!-- LOGIN FORM -->
-    <h2>LOGIN</h2>
-    <form id="loginForm">
-      <input type="text" class="username" placeholder="Username">
-      <input type="password" class="password" placeholder="Password">
-      <span class="link"><a href="#">Forgot password?</a></span>
-      <button class="btn">Log in</button>
-    </form>
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>TOP 3 RESTAURANT THIS WEEK</h1>
+    <div class="search-bar">
+      <input type="text" placeholder="Coffee & beverages">
+      <button><img src="assets/icons/search.svg" alt="Search"></button>
+      <button><img src="assets/icons/mic.svg" alt="Mic"></button>
+    </div>
+  </header>
 
-    <div class="social-icons">
-      <img src="assets/icons/facebook.svg" alt="Facebook">
-      <img src="assets/icons/google.svg" alt="Google">
-      <img src="assets/icons/apple.svg" alt="Apple">
+  <!-- Restaurant List -->
+  <section class="restaurants">
+    <div class="card">
+      <h2>JAKARTA'S RESTAURANT</h2>
+      <p>Jakarta Selatan</p>
+      <p>⭐ 4.7 (500+ ratings)</p>
+      <a href="#">Click for more</a>
     </div>
 
-    <span class="link">Not Registered yet? <a href="#">Sign up</a></span>
+    <div class="card">
+      <h2>MBIENCE GARDEN BISTRO</h2>
+      <p>Jakarta Barat</p>
+      <p>⭐ 4.5 (300+ ratings)</p>
+      <a href="#">Click for more</a>
+    </div>
 
-    <hr style="margin:20px 0;">
-
-    <!-- SIGN UP FORM -->
-    <h2>SIGN UP</h2>
-    <form id="signupForm">
-      <input type="text" class="username" placeholder="Username">
-      <input type="email" class="email" placeholder="Email">
-      <input type="password" class="password" placeholder="Create Password">
-      <span class="link">Already have an account? <a href="#">Log in</a></span>
-      <button class="btn">Sign up</button>
-    </form>
-  </div>
+    <div class="card">
+      <h2>BALI SUNSET DINER</h2>
+      <p>Denpasar</p>
+      <p>⭐ 4.8 (700+ ratings)</p>
+      <a href="#">Click for more</a>
+    </div>
+  </section>
 </body>
 </html>
