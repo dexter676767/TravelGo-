@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TravelGo! | Login</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelGo! - Login & Sign Up</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
   <div class="container">
-    <div class="top-section">
-      <h1 class="logo">TravelGo!</h1>
-      <p class="welcome">welcome traveler</p>
+    <img src="assets/img/logo.png" alt="TravelGo Logo" width="80">
+    <h1>TravelGo!</h1>
+    <p class="tagline">welcome traveler</p>
+
+    <!-- LOGIN FORM -->
+    <h2>LOGIN</h2>
+    <form id="loginForm">
+      <input type="text" class="username" placeholder="Username">
+      <input type="password" class="password" placeholder="Password">
+      <span class="link"><a href="#">Forgot password?</a></span>
+      <button class="btn">Log in</button>
+    </form>
+
+    <div class="social-icons">
+      <img src="assets/icons/facebook.svg" alt="Facebook">
+      <img src="assets/icons/google.svg" alt="Google">
+      <img src="assets/icons/apple.svg" alt="Apple">
     </div>
-    <div class="form-section">
-      <h2>LOGIN</h2>
-      <form>
-        <input type="text" placeholder="Username" class="input pink-input" required />
-        <input type="password" placeholder="Password" class="input blue-input" required />
-        <a href="#" class="Forgot">Forgot password ?</a>
-        <button type="submit" class="btn yellow-btn">Log in</button>
-        <div class="social-login">
-          <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg)" alt="Facebook">
-          <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/google.svg)" alt="Google">
-          <img src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/apple.svg)" alt="Apple">
-        </div>
-        <p class="switch-text">Not Registered yet ? <a href="signup.html">Sign up</a></p>
-      </form>
-    </div>
+
+    <span class="link">Not Registered yet? <a href="#">Sign up</a></span>
+
+    <hr style="margin:20px 0;">
+
+    <!-- SIGN UP FORM -->
+    <h2>SIGN UP</h2>
+    <form id="signupForm">
+      <input type="text" class="username" placeholder="Username">
+      <input type="email" class="email" placeholder="Email">
+      <input type="password" class="password" placeholder="Create Password">
+      <span class="link">Already have an account? <a href="#">Log in</a></span>
+      <button class="btn">Sign up</button>
+    </form>
   </div>
 </body>
 </html>
