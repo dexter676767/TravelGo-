@@ -1,8 +1,7 @@
-// Validasi sederhana untuk form login & sign up
+// Script TravelGo! untuk Login, Sign Up, dan Homepage
 document.addEventListener("DOMContentLoaded", () => {
+  // LOGIN FORM
   const loginForm = document.querySelector("#loginForm");
-  const signupForm = document.querySelector("#signupForm");
-
   if (loginForm) {
     loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -17,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // SIGN UP FORM
+  const signupForm = document.querySelector("#signupForm");
   if (signupForm) {
     signupForm.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -29,6 +30,22 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         alert(`Sign up berhasil! Akun ${username} telah dibuat.`);
       }
+    });
+  }
+
+  // SEARCH BAR HOMEPAGE
+  const searchBar = document.querySelector(".search-bar input");
+  const searchButtons = document.querySelectorAll(".search-bar button");
+
+  if (searchBar && searchButtons.length > 0) {
+    searchButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (searchBar.value.trim() === "") {
+          alert("Masukkan kata kunci pencarian terlebih dahulu!");
+        } else {
+          alert(`Mencari: ${searchBar.value}`);
+        }
+      });
     });
   }
 });
