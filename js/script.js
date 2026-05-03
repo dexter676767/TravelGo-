@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================
   const searchBar = document.querySelector(".search-bar input");
   if (searchBar) {
-    console.log("Homepage aktif: search bar tersedia");
-    // contoh interaksi
     searchBar.addEventListener("keypress", (e) => {
       if (e.key === "Enter") {
         alert(`Mencari restoran: ${searchBar.value}`);
@@ -18,19 +16,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================
   const loginForm = document.querySelector("#loginForm");
   if (loginForm) {
-    console.log("Halaman login aktif");
     loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const username = loginForm.querySelector(".username").value.trim();
       const password = loginForm.querySelector(".password").value.trim();
 
-      if (username === "" || password === "") {
-        alert("Nama pengguna dan kata sandi wajib diisi!");
-      } else if (username === "admin" && password === "12345") {
-        alert("Login berhasil! Selamat datang, Admin.");
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+      const match = users.find(
+        (u) => u.username === username && u.password === password
+      );
+
+      if (match) {
+        alert(`Login berhasil! Selamat datang, ${username}`);
         window.location.href = "index.html"; // redirect ke homepage
       } else {
-        alert("Login gagal! Periksa kembali username dan password.");
+        alert("Login gagal! Username atau password salah.");
       }
     });
   }
@@ -40,16 +40,27 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================
   const signupForm = document.querySelector("#signupForm");
   if (signupForm) {
-    console.log("Halaman signup aktif");
     signupForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const username = signupForm.querySelector(".username").value.trim();
       const email = signupForm.querySelector(".email").value.trim();
       const password = signupForm.querySelector(".password").value.trim();
 
-      if (username === "" || email === "" || password === "") {
+      if (!username || !email || !password) {
         alert("Semua field wajib diisi!");
+        return;
+      }
+
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+      const exists = users.find(
+        (u) => u.username === username || u.email === email
+      );
+
+      if (exists) {
+        alert("Username atau email sudah terdaftar!");
       } else {
+        users.push({ username, email, password });
+        localStorage.setItem("users", JSON.stringify(users));
         alert(`Akun ${username} berhasil dibuat!`);
         window.location.href = "login.html"; // redirect ke login
       }
