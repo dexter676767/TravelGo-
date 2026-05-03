@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TravelGo! - Masuk</title>
   <link rel="stylesheet" href="css/style.css">
+  <!-- Defer memastikan JS jalan setelah HTML dimuat -->
   <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -26,16 +27,27 @@
 
     <h2>Masuk</h2>
     <form id="loginForm">
-      <input type="text" class="username" placeholder="Nama pengguna">
-      <input type="password" class="password" placeholder="Kata sandi">
-      <span class="link"><a href="#">Lupa kata sandi?</a></span>
+      <!-- Menambahkan label (bisa disembunyikan dengan CSS jika ingin tampilan minimalis) -->
+      <div class="input-group">
+        <input type="text" id="username" name="username" class="username" placeholder="Nama pengguna" required>
+      </div>
+      
+      <div class="input-group">
+        <input type="password" id="password" name="password" class="password" placeholder="Kata sandi" required>
+      </div>
+
+      <div class="form-options">
+        <span class="link"><a href="#">Lupa kata sandi?</a></span>
+      </div>
+
       <button type="submit" class="btn">Masuk</button>
     </form>
 
     <div class="social-icons">
-      <img src="assets/icons/facebook.svg" alt="Facebook">
-      <img src="assets/icons/google.svg" alt="Google">
-      <img src="assets/icons/apple.svg" alt="Apple">
+      <!-- Menggunakan anchor tag agar icon bisa diklik -->
+      <a href="#"><img src="assets/icons/facebook.svg" alt="Masuk dengan Facebook"></a>
+      <a href="#"><img src="assets/icons/google.svg" alt="Masuk dengan Google"></a>
+      <a href="#"><img src="assets/icons/apple.svg" alt="Masuk dengan Apple"></a>
     </div>
 
     <span class="link">Belum punya akun? <a href="signup.html">Daftar</a></span>
