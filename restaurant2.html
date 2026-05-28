@@ -1,36 +1,63 @@
-<header class="restaurant-header">
-  <h1>Cerita Rasa Nusantara</h1>
-  <p>Classic Indonesian Fare</p>
-  <div class="buttons">
-    <button>Menu</button>
-    <button>Photo</button>
-    <button disabled>Reservation</button>
-  </div>
-</header>
-
-<section class="about">
-  <h2>ABOUT & RATINGS</h2>
-  <p>⭐ 4.6 (4.795 reviewers)</p>
-  <p>Mayoritas pengunjung puas dengan suasana asri, area parkir luas, dan kualitas rasa makanan.</p>
-</section>
-
-<footer class="footer">
-  <div class="social">
-    <h3>Follow us!</h3>
-    <p>Cerita Rasa</p>
-  </div>
-  <div class="contact">
-    <h3>Get contact with us</h3>
-    <p>Office: Jl. Ampera Raya No.9, Jakarta Selatan</p>
-    <p>Phone: 02178831600</p>
-    <p>Website: <a href="http://www.ceritarasa.co.id/">ceritarasa.co.id</a></p>
-  </div>
-  <div class="navigate">
-    <h3>Navigate</h3>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cerita Rasa Nusantara - TravelGo!</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <img src="assets/img/logo.png" alt="Logo TravelGo" class="logo">
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#">Menu</a></li>
-      <li><a href="#">About & ratings</a></li>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="login.html">Masuk</a></li>
+      <li><a href="#">Bantuan</a></li>
     </ul>
-  </div>
-</footer>
+  </nav>
+
+  <header class="restaurant-header">
+    <h1>Cerita Rasa Nusantara</h1>
+    <p>Classic Indonesian Fare</p>
+    <div class="buttons">
+      <button onclick="location.href='menu2.html'">Menu</button>
+      <button onclick="location.href='photo2.html'">Photo</button>
+      <button onclick="location.href='reservation2.html'">Reservation</button>
+    </div>
+  </header>
+
+  <section class="about">
+    <div class="thumbnail">
+      <img src="assets/img/ceritarasa-thumbnail.jpg" alt="Thumbnail Cerita Rasa">
+    </div>
+    <div class="review">
+      <h2>Review & Ratings</h2>
+      <p>Classic Indonesian fare offered in breezy, contemporary digs with outdoor seating.</p>
+      <p>⭐ ⭐ ⭐ ⭐ ☆ (4.6 / 5 berdasarkan 4.795 ulasan)</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="logo"><img src="assets/img/ceritarasa-logo.png" alt="Logo Restaurant"></div>
+    <div class="social">
+      <h3>Social Media</h3>
+      <a href="https://www.instagram.com/ceritarasa.id/">Instagram</a><br>
+      <a href="https://www.facebook.com/ceritarasa.id">Facebook</a><br>
+      <a href="https://www.youtube.com/@ceritarasanusantara8981">YouTube</a>
+    </div>
+    <div class="contact">
+      <h3>Kontak</h3>
+      <p>Alamat: Jl. Ampera Raya No.9, Jakarta Selatan</p>
+      <p>Telepon: 02178831600</p>
+      <p>Website: <a href="http://www.ceritarasa.co.id/">ceritarasa.co.id</a></p>
+    </div>
+    <div class="navigate">
+      <h3>Navigate</h3>
+      <a href="index.html">Home</a><br>
+      <a href="menu2.html">Menu</a><br>
+      <a href="reservation2.html">Reservation</a><br>
+      <a href="restaurant2.html">About & Ratings</a>
+    </div>
+  </footer>
+</body>
+</html>
