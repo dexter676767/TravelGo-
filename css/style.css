@@ -280,4 +280,10 @@ input.email { background: #ffe4b5; }
 .drink-card:hover {
   transform: scale(1.05);
   background: #217dbb;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* =========================
+   DESSERTS GRID
+========================= */
+.dess
