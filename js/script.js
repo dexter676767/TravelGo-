@@ -68,8 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =========================
-  // SLIDESHOW (Photo pages)
-  // =========================
+// SLIDESHOW (Photo pages)
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
   const slidesContainer = document.querySelector(".slides");
   const slideItems = document.querySelectorAll(".slide");
   let currentIndex = 0;
@@ -82,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
     slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
   }
 
-  // tombol panah
   const leftArrow = document.querySelector(".arrow.left");
   const rightArrow = document.querySelector(".arrow.right");
 
