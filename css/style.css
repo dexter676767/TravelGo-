@@ -269,6 +269,7 @@ input.email { background: #ffe4b5; }
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   font-weight: bold;
   transition: transform 0.3s ease;
+  cursor: pointer; /* biar terasa interaktif */
 }
 .drink-card span {
   display: block;
@@ -277,8 +278,9 @@ input.email { background: #ffe4b5; }
   font-weight: normal;
 }
 .drink-card:hover {
-  transform: scale(1.05);
-  background: #217dbb;
+  transform: scale(1.05); /* efek ngambang */
+  background: #217dbb;   /* warna biru lebih gelap saat hover */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
 /* =========================
