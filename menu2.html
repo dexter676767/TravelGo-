@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Header -->
   <header class="menu-header">
     <a href="restaurant2.html" class="back-btn">← Menu</a>
     <h1>TravelGo!</h1>
@@ -16,7 +17,20 @@
   <section class="menu-section food">
     <h2>FOOD <span class="badge">FOODIES</span></h2>
     <p>grab ur meals right now!</p>
-    <div class="food-grid">
+
+    <!-- Foto makanan -->
+    <div class="menu-images">
+      <img src="assets/img/food1.jpg" alt="Food sample">
+      <img src="assets/img/food2.jpg" alt="Food sample">
+    </div>
+
+    <!-- Kotak tombol FOOD -->
+    <div class="food-toggle" onclick="toggleFoodMenu()">
+      <p>🍽 Klik di sini untuk lihat menu makanan</p>
+    </div>
+
+    <!-- Grid makanan (default hidden) -->
+    <div id="food-list" class="food-grid hidden">
       <div class="food-card">Sate Maranggi & Ketan Bakar <br><span>Rp. 139.000</span></div>
       <div class="food-card">Bandeng Bakar Dabu Dabu <br><span>Rp. 169.000</span></div>
       <div class="food-card">Asam Asam Iga <br><span>Rp. 129.000</span></div>
@@ -45,5 +59,13 @@
       <img src="assets/img/drink2.jpg" alt="Drink sample">
     </div>
   </section>
+
+  <!-- Script toggle -->
+  <script>
+    function toggleFoodMenu() {
+      const list = document.getElementById('food-list');
+      list.classList.toggle('hidden');
+    }
+  </script>
 </body>
 </html>
