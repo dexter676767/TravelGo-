@@ -21,9 +21,7 @@
       <img src="assets/img/food2.jpg" alt="Food sample">
     </div>
 
-    <div class="food-toggle" onclick="toggleFoodMenu()">
-      <p>🍽 Klik di sini untuk lihat menu makanan</p>
-    </div>
+    <div class="food-toggle" onclick="toggleFoodMenu()">🍽 Klik di sini untuk lihat menu makanan</div>
 
     <div id="food-list" class="food-grid hidden">
       <div class="food-card">Ayam Dharmawangsa <br><span>Rp. 145.000</span></div>
@@ -55,8 +53,7 @@
 
   <script>
     function toggleFoodMenu() {
-      const list = document.getElementById('food-list');
-      list.classList.toggle('hidden');
+      document.getElementById('food-list').classList.toggle('hidden');
     }
   </script>
 </body>
