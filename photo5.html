@@ -3,33 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photo Abunawas Restaurant</title>
+  <title>Photo Restaurant 5</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <section class="photo-section">
     <h2>THE AMBIENCE</h2>
     <div class="slider">
-      <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="arrow left">&#10094;</button>
       <div class="slides">
-        <div class="slide"><img src="assets/img/abunawas1.jpg" alt="Abunawas 1"></div>
-        <div class="slide"><img src="assets/img/abunawas2.jpg" alt="Abunawas 2"></div>
-        <div class="slide"><img src="assets/img/abunawas3.jpg" alt="Abunawas 3"></div>
+        <div class="slide"><img src="assets/img/photo5a.jpg" alt="Foto 1"></div>
+        <div class="slide"><img src="assets/img/photo5b.jpg" alt="Foto 2"></div>
+        <div class="slide"><img src="assets/img/photo5c.jpg" alt="Foto 3"></div>
       </div>
-      <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
+      <button class="arrow right">&#10095;</button>
     </div>
   </section>
-
-  <script>
-    let currentIndex = 0;
-    function moveSlide(direction) {
-      const slides = document.querySelector('.slides');
-      const totalSlides = document.querySelectorAll('.slide').length;
-      currentIndex += direction;
-      if (currentIndex < 0) currentIndex = totalSlides - 1;
-      else if (currentIndex >= totalSlides) currentIndex = 0;
-      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-  </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
