@@ -191,7 +191,7 @@ input.email { background: #ffe4b5; }
   text-align: center;
   color: #fff;
 }
-.menu-section h2 { margin-bottom: 10px; }
+.menu-section h2 { margin-bottom: 10px; cursor: pointer; }
 .menu-section .badge {
   background: #fff;
   color: #333;
@@ -213,17 +213,39 @@ input.email { background: #ffe4b5; }
 }
 .menu-images img {
   width: 150px;
-  border-radius: 10px;
+  border-radius: 50%; /* bulat sesuai UI */
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
+  object-fit: cover;
 }
 .menu-images img:hover {
   transform: scale(1.1);
 }
 
 /* =========================
-   FOOD GRID
+   FOOD GRID + TOGGLE
 ========================= */
+.food-toggle {
+  background: #fff;
+  color: #ff7f50;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 20px auto;
+  width: 80%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+.food-toggle:hover {
+  transform: scale(1.05);
+  background: #ffe4b5;
+}
+
+.hidden {
+  display: none;
+}
+
 .food-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -258,9 +280,4 @@ input.email { background: #ffe4b5; }
   .restaurants { flex-direction: column; align-items: center; }
   .search-bar input { width: 180px; }
   .footer { flex-direction: column; text-align: center; }
-  .form-container { width: 95%; padding: 20px; margin: 40px auto; }
-  .about { flex-direction: column; align-items: center; }
-  .about .thumbnail img { width: 100%; max-width: 300px; margin-bottom: 20px; }
-  .menu-images { flex-direction: column; }
-  .food-grid { grid-template-columns: 1fr; }
-}
+  .form-container { width: 95%; padding: 20px; margin: 40px
