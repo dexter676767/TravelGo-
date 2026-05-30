@@ -326,3 +326,62 @@ input.email { background: #ffe4b5; }
   .menu-images { flex-direction: column; }
   .food-grid { grid-template-columns: 1fr; }
 }
+
+/* =========================
+   SLIDESHOW PHOTO SECTION
+========================= */
+.photo-section {
+  text-align: center;
+  padding: 30px;
+  background: #fff;
+}
+.photo-section h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+.slider {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+.arrow:hover { background: rgba(0,0,0,0.7); }
+.arrow.left { left: 15px; }
+.arrow.right { right: 15px; }
+
+/* =========================
+   RESPONSIVE SLIDESHOW
+========================= */
+@media (max-width: 768px) {
+  .slider { max-width: 100%; }
+  .arrow { padding: 8px; font-size: 18px; }
+  .photo-section h2 { font-size: 20px; }
+}
