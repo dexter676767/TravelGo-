@@ -67,7 +67,7 @@ body {
   cursor: pointer;
   transition: transform 0.2s ease;
 }
-.card:hover { transform: scale(1.05); }
+.card:hover { transform: scale(1.05); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
 .card h2 { color: #ff7f50; }
 
 /* =========================
@@ -81,19 +81,10 @@ body {
   max-width: 95%;
   padding: 30px;
   text-align: center;
-  margin: 80px auto; /* memastikan form di tengah layar */
+  margin: 80px auto;
 }
-
-.form-container h1 {
-  color: #ff7f50;
-  margin-bottom: 10px;
-}
-
-.tagline {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 20px;
-}
+.form-container h1 { color: #ff7f50; margin-bottom: 10px; }
+.tagline { font-size: 14px; color: #555; margin-bottom: 20px; }
 
 input {
   width: 100%;
@@ -104,7 +95,6 @@ input {
   outline: none;
   font-size: 14px;
 }
-
 input.username { background: #ffc0cb; }
 input.password { background: #87ceeb; }
 input.email { background: #ffe4b5; }
@@ -118,15 +108,11 @@ input.email { background: #ffe4b5; }
   font-weight: bold;
   cursor: pointer;
   margin-top: 15px;
+  transition: all 0.3s ease;
 }
-.btn:hover { background: #ffdb4d; }
+.btn:hover { background: #ffdb4d; transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
 
-.link {
-  font-size: 13px;
-  margin-top: 10px;
-  display: block;
-  color: #333;
-}
+.link { font-size: 13px; margin-top: 10px; display: block; color: #333; }
 .link a { color: #007bff; text-decoration: none; }
 
 /* =========================
@@ -148,6 +134,13 @@ input.email { background: #ffe4b5; }
   background: #fff;
   color: #333;
   font-weight: bold;
+  transition: all 0.3s ease;
+}
+.restaurant-header button:hover {
+  background: #ffcc00;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .about {
@@ -162,13 +155,8 @@ input.email { background: #ffe4b5; }
   max-width: 1000px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-.about .thumbnail img {
-  width: 250px;
-  border-radius: 10px;
-}
-.about .review {
-  max-width: 600px;
-}
+.about .thumbnail img { width: 250px; border-radius: 10px; }
+.about .review { max-width: 600px; }
 .about h2 { color: #ff7f50; margin-bottom: 10px; }
 
 /* =========================
@@ -177,13 +165,61 @@ input.email { background: #ffe4b5; }
 .footer {
   display: flex;
   justify-content: space-around;
-  background: #87ceeb; /* biru sesuai UI */
+  background: #87ceeb;
   color: #fff;
   padding: 20px;
   flex-wrap: wrap;
 }
 .footer div { margin: 10px; }
 .footer a { color: #fff; text-decoration: none; }
+
+/* =========================
+   MENU PAGE
+========================= */
+.menu-header {
+  background: pink;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.menu-header h1 { color: #333; }
+.back-btn { color: #333; font-weight: bold; text-decoration: none; }
+
+.menu-section {
+  padding: 30px;
+  text-align: center;
+  color: #fff;
+}
+.menu-section h2 { margin-bottom: 10px; }
+.menu-section .badge {
+  background: #fff;
+  color: #333;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.menu-section.food { background: #ff7f50; }
+.menu-section.desserts { background: #ff69b4; }
+.menu-section.drinks { background: #3498db; }
+
+.menu-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+.menu-images img {
+  width: 150px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+.menu-images img:hover {
+  transform: scale(1.1);
+}
 
 /* =========================
    RESPONSIVE
@@ -195,4 +231,5 @@ input.email { background: #ffe4b5; }
   .form-container { width: 95%; padding: 20px; margin: 40px auto; }
   .about { flex-direction: column; align-items: center; }
   .about .thumbnail img { width: 100%; max-width: 300px; margin-bottom: 20px; }
+  .menu-images { flex-direction: column; }
 }
