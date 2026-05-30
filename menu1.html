@@ -1,32 +1,70 @@
-<section class="menu-section food">
-  <h2>FOOD <span class="badge">FOODIES</span></h2>
-  <p>grab ur meals right now!</p>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Umara Restaurant</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="menu-header">
+    <a href="restaurant1.html" class="back-btn">← Menu</a>
+    <h1>TravelGo!</h1>
+  </header>
 
-  <!-- Foto makanan -->
-  <div class="menu-images">
-    <img src="assets/img/food1.jpg" alt="Food sample">
-    <img src="assets/img/food2.jpg" alt="Food sample">
-  </div>
+  <!-- FOOD -->
+  <section class="menu-section food">
+    <h2>FOOD <span class="badge">FOODIES</span></h2>
+    <p>grab ur meals right now!</p>
 
-  <!-- Kotak tombol FOOD -->
-  <div class="food-toggle" onclick="toggleFoodMenu()">
-    🍽 Klik di sini untuk lihat menu makanan
-  </div>
+    <!-- Foto makanan -->
+    <div class="menu-images">
+      <img src="assets/img/food1.jpg" alt="Food sample">
+      <img src="assets/img/food2.jpg" alt="Food sample">
+    </div>
 
-  <!-- Grid makanan (default hidden) -->
-  <div id="food-list" class="food-grid hidden">
-    <div class="food-card">Kulit Ayam Goreng Umara <br><span>Rp. 87.000</span></div>
-    <div class="food-card">Nasi Goreng Lidah Juara <br><span>Rp. 109.000</span></div>
-    <div class="food-card">Steak Nusantara (250 Gr) <br><span>Rp. 393.000</span></div>
-    <div class="food-card">Umara Sample Platters <br><span>Rp. 140.000</span></div>
-    <div class="food-card">Lidah Sambalado Ijo <br><span>Rp. 138.000</span></div>
-    <div class="food-card">Dendeng Bukit Paso <br><span>Rp. 119.800</span></div>
-  </div>
-</section>
+    <!-- Kotak tombol FOOD -->
+    <div class="food-toggle" onclick="toggleFoodMenu()">
+      🍽 Klik di sini untuk lihat menu makanan
+    </div>
 
-<script>
-function toggleFoodMenu() {
-  const list = document.getElementById('food-list');
-  list.classList.toggle('hidden');
-}
-</script>
+    <!-- Grid makanan (default hidden) -->
+    <div id="food-list" class="food-grid hidden">
+      <div class="food-card">Kulit Ayam Goreng Umara <br><span>Rp. 87.000</span></div>
+      <div class="food-card">Nasi Goreng Lidah Juara <br><span>Rp. 109.000</span></div>
+      <div class="food-card">Steak Nusantara (250 Gr) <br><span>Rp. 393.000</span></div>
+      <div class="food-card">Umara Sample Platters <br><span>Rp. 140.000</span></div>
+      <div class="food-card">Lidah Sambalado Ijo <br><span>Rp. 138.000</span></div>
+      <div class="food-card">Dendeng Bukit Paso <br><span>Rp. 119.800</span></div>
+    </div>
+  </section>
+
+  <!-- DESSERTS -->
+  <section class="menu-section desserts">
+    <h2>DESSERTS <span class="badge">SWEETNES</span></h2>
+    <p>Desserts for the last of the best.</p>
+    <div class="menu-images">
+      <img src="assets/img/dessert1.jpg" alt="Dessert sample">
+      <img src="assets/img/dessert2.jpg" alt="Dessert sample">
+    </div>
+  </section>
+
+  <!-- DRINKS -->
+  <section class="menu-section drinks">
+    <h2>DRINKS <span class="badge">COFFEE & NON COFFEE</span></h2>
+    <p>Need something to wake our spirits.</p>
+    <div class="menu-images">
+      <img src="assets/img/drink1.jpg" alt="Drink sample">
+      <img src="assets/img/drink2.jpg" alt="Drink sample">
+    </div>
+  </section>
+
+  <!-- Script toggle -->
+  <script>
+    function toggleFoodMenu() {
+      document.getElementById('food-list').classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>
