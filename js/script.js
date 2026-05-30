@@ -66,4 +66,37 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // =========================
+  // SLIDESHOW (Photo pages)
+  // =========================
+  const slidesContainer = document.querySelector(".slides");
+  const slideItems = document.querySelectorAll(".slide");
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    if (!slidesContainer) return;
+    if (index < 0) index = slideItems.length - 1;
+    if (index >= slideItems.length) index = 0;
+    currentIndex = index;
+    slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  // tombol panah
+  const leftArrow = document.querySelector(".arrow.left");
+  const rightArrow = document.querySelector(".arrow.right");
+
+  if (leftArrow) {
+    leftArrow.addEventListener("click", () => showSlide(currentIndex - 1));
+  }
+  if (rightArrow) {
+    rightArrow.addEventListener("click", () => showSlide(currentIndex + 1));
+  }
+
+  // auto-slide setiap 5 detik
+  if (slidesContainer) {
+    setInterval(() => {
+      showSlide(currentIndex + 1);
+    }, 5000);
+  }
 });
