@@ -236,6 +236,7 @@ input.email { background: #ffe4b5; }
   width: 80%;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
+  text-align: center;
 }
 .food-toggle:hover {
   transform: scale(1.05);
@@ -280,4 +281,5 @@ input.email { background: #ffe4b5; }
   .restaurants { flex-direction: column; align-items: center; }
   .search-bar input { width: 180px; }
   .footer { flex-direction: column; text-align: center; }
-  .form-container { width: 95%; padding: 20px; margin: 40px
+  .form-container { width: 95%; padding: 20px; margin: 40px auto; }
+  .about { flex-direction: column; align
